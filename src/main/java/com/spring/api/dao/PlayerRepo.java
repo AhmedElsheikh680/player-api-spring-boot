@@ -8,4 +8,6 @@ public interface PlayerRepo {
 
     public  List<Player> players();
 
+    public Player getPlayer(int id);
+
 }

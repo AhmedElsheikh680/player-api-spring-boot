@@ -22,4 +22,11 @@ public class PlayerRepoImpl implements PlayerRepo{
 
         return query.getResultList();
     }
+
+    @Override
+    public Player getPlayer(int id) {
+        Session session = entityManager.unwrap(Session.class);
+        return session.get(Player.class, id);
+
+    }
 }

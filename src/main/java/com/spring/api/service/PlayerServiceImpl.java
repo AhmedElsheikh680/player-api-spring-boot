@@ -14,8 +14,14 @@ public class PlayerServiceImpl implements PlayerService{
 
     @Autowired
     private PlayerRepo playerRepo;
+
     @Override
     public List<Player> players() {
         return playerRepo.players();
+    }
+
+    @Override
+    public Player getPlayer(int id) {
+        return playerRepo.getPlayer(id);
     }
 }
