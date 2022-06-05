@@ -4,6 +4,7 @@ import com.spring.api.model.Player;
 import org.hibernate.Session;
 
 import org.hibernate.query.Query;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
 import javax.persistence.EntityManager;
@@ -12,6 +13,7 @@ import java.util.List;
 @Repository
 public class PlayerRepoImpl implements PlayerRepo{
 
+    @Autowired
     private EntityManager entityManager;
     @Override
     public List<Player> players() {
