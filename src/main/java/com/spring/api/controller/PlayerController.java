@@ -3,10 +3,7 @@ package com.spring.api.controller;
 import com.spring.api.model.Player;
 import com.spring.api.service.PlayerService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -29,5 +26,17 @@ public class PlayerController {
            throw new RuntimeException("Player Not Found ID: "+id);
        }
        return player;
+    }
+
+    @PostMapping("/player")
+    public Player addPlayer(@RequestBody Player player) {
+        playerService.addPlayer(player);
+        return player;
+    }
+
+    @PutMapping("/player")
+    public Player updatePlayer(@RequestBody Player player) {
+        playerService.addPlayer(player);
+        return player;
     }
 }

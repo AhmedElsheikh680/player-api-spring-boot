@@ -29,4 +29,10 @@ public class PlayerRepoImpl implements PlayerRepo{
         return session.get(Player.class, id);
 
     }
+
+    @Override
+    public void addPlayer(Player player) {
+        Session session = entityManager.unwrap(Session.class);
+        session.saveOrUpdate(player);
+    }
 }
