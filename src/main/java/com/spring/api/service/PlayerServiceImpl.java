@@ -29,4 +29,9 @@ public class PlayerServiceImpl implements PlayerService{
     public void addPlayer(Player player) {
         playerRepo.addPlayer(player);
     }
+
+    @Override
+    public int deletePlayer(int id) {
+        return playerRepo.deletePlayer(id);
+    }
 }

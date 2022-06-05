@@ -35,4 +35,12 @@ public class PlayerRepoImpl implements PlayerRepo{
         Session session = entityManager.unwrap(Session.class);
         session.saveOrUpdate(player);
     }
+
+    @Override
+    public int deletePlayer(int id) {
+       Session session = entityManager.unwrap(Session.class);
+       Query query = session.createQuery("delete from Player where id=?1");
+       query.setInteger(1, id);
+       return query.executeUpdate();
+    }
 }

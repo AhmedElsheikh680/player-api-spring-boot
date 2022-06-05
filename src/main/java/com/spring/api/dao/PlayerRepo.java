@@ -12,4 +12,6 @@ public interface PlayerRepo {
 
     public void addPlayer(Player player);
 
+    public int deletePlayer(int id);
+
 }

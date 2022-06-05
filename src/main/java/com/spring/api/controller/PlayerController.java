@@ -39,4 +39,30 @@ public class PlayerController {
         playerService.addPlayer(player);
         return player;
     }
+
+    @DeleteMapping("/player/{id}")
+    public String deletePlayer(@PathVariable("id") int id) {
+        int result = playerService.deletePlayer(id);
+        if(result ==0) {
+            throw new RuntimeException("Player Not Found ID: "+ id);
+        }
+        return "Deleted Successfully!!";
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 }
